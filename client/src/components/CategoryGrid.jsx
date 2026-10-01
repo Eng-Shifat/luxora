@@ -4,7 +4,7 @@ import { categories } from "../data/siteData";
 
 export default function CategoryGrid() {
   return (
-    <section className="cats container">
+    <section className="cats container" id="categories">
       {categories.map((c) => (
         <a href="#" key={c.id} className={`cat cat-${c.id} ${c.tone} ${c.size || ""}`}>
           <div className="cat-text">

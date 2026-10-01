@@ -271,3 +271,63 @@ a{color:inherit;text-decoration:none} button{font:inherit;cursor:pointer;backgro
   .promo-main p{font-size:15px;margin-bottom:12px}
   .seal{display:none}
 }
+
+/* ===== Professional hero text + site-wide animation + Coming Soon ===== */
+html{scroll-behavior:smooth}
+#new,#categories,#top{scroll-margin-top:84px}
+#progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:100;background:linear-gradient(90deg,var(--rust),#B98A4B);transform:scaleX(0);transform-origin:left;pointer-events:none}
+.nav{transition:box-shadow .3s,background .3s}
+.nav.stuck{box-shadow:0 8px 24px rgba(120,90,60,.10)}
+
+/* Hero text */
+.eyebrow{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border-radius:999px;background:rgba(196,81,45,.09);border:1px solid rgba(196,81,45,.18);font-weight:600;font-size:11.5px;letter-spacing:.16em}
+.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--rust);box-shadow:0 0 0 0 rgba(196,81,45,.5);animation:pulseDot 2s infinite}
+.hero h1{letter-spacing:-.025em}
+.hero h1 .grad{display:inline;background:linear-gradient(100deg,#C4512D 0%,#B98A4B 45%,#C4512D 100%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gradMove 6s linear infinite}
+.hero.full h1 .grad{text-shadow:none;filter:drop-shadow(0 0 12px var(--bg))}
+.hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.hero-cta .btn{padding:16px 30px;font-size:15px;border-radius:999px;box-shadow:0 12px 26px rgba(196,81,45,.28)}
+.hero-cta .btn:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(196,81,45,.36)}
+.btn{transition:background .2s,transform .25s,box-shadow .25s,color .2s}
+.btn svg{transition:transform .25s}.btn:hover svg{transform:translateX(4px)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(30,26,22,.25);box-shadow:none!important}
+.btn.ghost:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.proof{padding-top:24px;border-top:1px solid var(--line);max-width:380px}
+.avatars span:nth-child(1){background:linear-gradient(135deg,#E9D3C3,#D9B8A2)}
+.avatars span:nth-child(2){background:linear-gradient(135deg,#CFD8C6,#B4C2A8)}
+.avatars span:nth-child(3){background:linear-gradient(135deg,#EBD9B8,#D9BE8E)}
+.avatars span:nth-child(4){background:linear-gradient(135deg,#E8C9C0,#D4A597)}
+.hero-text .lead{font-size:17px}
+@media(max-width:980px){.hero-cta{justify-content:center}.hero.full .hero-cta{justify-content:flex-start}.proof{max-width:none}.eyebrow{margin-bottom:16px}}
+
+/* Scroll reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.2,1) var(--d,0ms),transform .7s cubic-bezier(.2,.7,.2,1) var(--d,0ms)}
+.reveal.in{opacity:1;transform:none}
+.card,.cat{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,opacity .7s cubic-bezier(.2,.7,.2,1) var(--d,0ms)}
+.card:hover,.cat:hover{transform:translateY(-6px);box-shadow:0 18px 36px rgba(120,90,60,.14)}
+.card img,.cat img{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.card:hover img,.cat:hover img{transform:scale(1.05)}
+.seal{animation:sealPulse 4s ease-in-out infinite}
+.promo-icon svg{animation:wiggle 3.5s ease-in-out infinite}
+.feature svg{transition:transform .3s}.feature:hover svg{transform:translateY(-3px) scale(1.1)}
+.nav nav a{transition:color .2s}
+.foot-grid a:not(.logo){transition:color .15s,transform .2s}.foot-grid a:not(.logo):hover{transform:translateX(4px)}
+
+/* Coming Soon popup */
+.soon-wrap{position:fixed;inset:0;z-index:200;display:grid;place-items:center;padding:20px;background:rgba(30,22,16,.45);backdrop-filter:blur(6px);animation:fadeIn .25s both}
+.soon{position:relative;width:100%;max-width:400px;background:var(--bg);border-radius:22px;padding:36px 30px 30px;text-align:center;box-shadow:0 30px 70px rgba(0,0,0,.25);animation:popIn .45s cubic-bezier(.2,.9,.3,1.2) both}
+.soon .logo-mark{width:56px;height:56px;margin-bottom:10px}
+.soon small{display:block;color:var(--rust);font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:12px;margin-bottom:8px}
+.soon h3{font-size:22px;font-weight:600;line-height:1.25;margin-bottom:8px}
+.soon p{color:var(--muted);font-size:14px;margin-bottom:22px}
+.soon-x{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(0,0,0,.05)}
+.soon-x:hover{background:rgba(0,0,0,.1)}
+
+@keyframes gradMove{to{background-position:-200% 0}}
+@keyframes lineGrow{to{transform:scaleX(1)}}
+@keyframes pulseDot{70%{box-shadow:0 0 0 8px rgba(196,81,45,0)}100%{box-shadow:0 0 0 0 rgba(196,81,45,0)}}
+@keyframes sealPulse{0%,100%{transform:rotate(-6deg) scale(1)}50%{transform:rotate(3deg) scale(1.06)}}
+@keyframes wiggle{0%,70%,100%{transform:rotate(-12deg)}80%{transform:rotate(-2deg)}90%{transform:rotate(-20deg)}}
+@keyframes fadeIn{from{opacity:0}}
+@keyframes popIn{from{opacity:0;transform:translateY(20px) scale(.9)}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.seal,.promo-icon svg,.hero h1 .grad,.eyebrow::before{animation:none}}

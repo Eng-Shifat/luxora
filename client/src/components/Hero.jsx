@@ -65,10 +65,13 @@ export default function Hero() {
         {/* key = slide change hole text-ta smooth ভাবে নতুন kore animate hoy */}
         <div className="hero-copy" key={index} aria-live={autoplay && !paused ? "off" : "polite"}>
           <p className="eyebrow">{s.eyebrow}</p>
-          <h1>{s.title[0]}<br />{s.title[1]}</h1>
+          <h1>{s.title[0]}<br /><span className="grad">{s.title[1]}</span></h1>
           <p className="lead">{s.text[0]}<br />{s.text[1]}</p>
         </div>
-        <a className="btn" href="#new">{hero.cta} <ArrowRight size={16} /></a>
+        <div className="hero-cta">
+          <a className="btn" href="#new">{hero.cta} <ArrowRight size={16} /></a>
+          <a className="btn ghost" href="#">View Lookbook</a>
+        </div>
         <div className="proof">
           <div className="avatars">{[0, 1, 2, 3].map((i) => <span key={i} />)}</div>
           <div>

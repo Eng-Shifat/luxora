@@ -16,7 +16,7 @@ function useReveal() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const io = new IntersectionObserver((es) => es.forEach((e) => {
       if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
-    }), { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    }), { threshold: 0.05 });
     const scan = () => document.querySelectorAll(REVEAL).forEach((el) => {
       if (el.dataset.rv) return;
       el.dataset.rv = "1";

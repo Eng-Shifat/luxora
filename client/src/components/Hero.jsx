@@ -55,10 +55,6 @@ export default function Hero() {
       id="top"
       aria-roledescription="carousel"
       aria-label="Featured collections"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onFocus={() => setPaused(true)}
-      onBlur={() => setPaused(false)}
       onKeyDown={onKeyDown}
     >
       <div className="hero-text">

@@ -14,7 +14,7 @@ export const hero = {
       image: "/images/hero/hero",
       position: "60% top", // desktop photo crop position
       positionMobile: "66% top", // mobile-e photo-r kon ongsho dekhabe
-      eyebrow: "New Season 2024",
+      eyebrow: "New Season 2026",
       title: ["Own Your", "Signature Style"],
       text: ["Timeless pieces. Modern silhouettes.", "Made for the way you live."],
     },

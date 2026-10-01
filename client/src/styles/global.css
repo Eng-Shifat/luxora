@@ -331,3 +331,33 @@ html{scroll-behavior:smooth}
 @keyframes fadeIn{from{opacity:0}}
 @keyframes popIn{from{opacity:0;transform:translateY(20px) scale(.9)}}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.seal,.promo-icon svg,.hero h1 .grad,.eyebrow::before{animation:none}}
+
+/* Mobile/tablet: 01/02 number er bodole chhoto dot indicator (active ta lomba pill, progress shoho) */
+@media(max-width:980px){
+  .hero .slides{gap:4px;margin-top:22px;align-items:center;justify-content:center}
+  .hero .slides button{font-size:0;line-height:0;padding:12px 6px;margin:0;display:flex;align-items:center}
+  .hero .slides .bar{width:8px;height:8px;margin:0;border-radius:999px;background:rgba(30,26,22,.22);transition:width .35s cubic-bezier(.2,.8,.2,1),background .3s}
+  .hero .slides .on .bar{width:30px;background:rgba(196,81,45,.22)}
+}
+@media(max-width:560px){.hero-cta{gap:10px;flex-wrap:nowrap}.hero-cta .btn{padding:14px 20px;font-size:14px;white-space:nowrap}}
+@media(max-width:360px){.hero-cta .btn{padding:13px 16px;font-size:13px}}
+
+/* Mobile: hero photo er niche-r ek-dui pixel er jhapsha line cover kore dei */
+@media(max-width:980px){
+  .hero.full::after{content:"";position:absolute;left:calc(var(--hero-pad)*-1);right:calc(var(--hero-pad)*-1);bottom:-1px;height:6px;background:var(--bg);z-index:1;pointer-events:none}
+  .hero-visual.full{bottom:3px}
+}
+
+/* Footer credit */
+.dev{text-align:center;font-size:12.5px;color:var(--muted);margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);letter-spacing:.02em}
+.dev strong{color:var(--rust);font-weight:600}
+
+/* Footer: newsletter + payment icons remove howar por layout */
+.foot-grid{grid-template-columns:1.7fr 1fr 1fr 1fr}
+.foot-bottom .dev{margin:0;padding:0;border:0;text-align:right}
+@media(max-width:980px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.foot-bottom{align-items:center;text-align:center}.foot-bottom .dev{text-align:center}}
+
+/* Footer er niche space (mobile e .container padding oi space ta muche dito) */
+.footer.container{padding-bottom:calc(36px + env(safe-area-inset-bottom,0px))}
+.foot-bottom{padding-bottom:4px}
